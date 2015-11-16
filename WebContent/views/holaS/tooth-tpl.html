@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Dientes</title>
+	<meta charset="utf-8" http-equiv="encoding">
+	<!-- it's important for d3.js -->
+	<script src="../../scripts/lib/angular/angular.js"></script>
+	<script src="../../scripts/lib/d3/d3.js" charset="utf-8"></script>
+	<script src="../../scripts/lib/nvd3/nv.d3.js"></script>
+	<!-- or use another assembly -->
+	<script src="../../scripts/lib/angular-nvd3/angular-nvd3.js"></script>
+	<script src="controllers/tooth-ctrl.js"></script>
+	<link rel="stylesheet" href="../../styles/nvd3/nv.d3.css">
+	<link rel="stylesheet" href="../../styles/mine/dental.css">
+</head>
+<body ng-controller="myCtrl">
+	<div>
+		<input type="number" id="quantityA" name="quantityA" min="-15" max="15" ng-model="quantityA" ng-change="onChangeQuantity()">
+		<input type="number" id="quantityB" name="quantityB" min="-15" max="15" ng-model="quantityB" ng-change="onChangeQuantity()">
+		<input type="number" id="quantityC" name="quantityC" min="-15" max="15" ng-model="quantityC" ng-change="onChangeQuantity()">
+		<div id="tooth_div" class="tooth_div">
+			<nvd3 options="options" data="dataChart" id="chart" forcey="[-15,15]"></nvd3>
+		</div>
+	</div>
+</body>
+</html>
